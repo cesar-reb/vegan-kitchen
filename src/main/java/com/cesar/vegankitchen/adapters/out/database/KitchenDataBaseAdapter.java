@@ -24,13 +24,25 @@ public class KitchenDataBaseAdapter implements KitchenDataBasePort {
 
     @Override
     public List<MenuItem> getMenu() {
-        return  menuRepository.findAll();
+        return menuRepository.findAll();
     }
 
     @Override
     public Tab saveTab(Tab tab) {
+        var tableNumber = tab.getTable().getNumber();
+        var occupied = tab.getTable().getOccupied();
+        var table = diningTableRepository.findByNumber(tableNumber)
+                .orElseGet(() -> diningTableRepository.save(
+                DiningTable.builder()
+                        .number(tableNumber)
+                        .occupied(occupied)
+                        .build()));
+        table.setOccupied(occupied);
+        tab.setTable(table);
         return tabRepository.save(tab);
     }
+
+
 
     @Override
     public Optional<Tab> getTab(Tab tab) {
