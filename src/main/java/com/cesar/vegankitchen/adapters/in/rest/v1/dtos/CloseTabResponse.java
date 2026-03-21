@@ -1,7 +1,6 @@
-package com.cesar.vegankitchen.api.v1.dtos;
+package com.cesar.vegankitchen.adapters.in.rest.v1.dtos;
 
 
-import com.cesar.vegankitchen.domain.ItemCategory;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -9,11 +8,14 @@ import java.time.LocalDateTime;
 
 
 @Data
-public class OpenTabResponse {
+public class CloseTabResponse {
 
     private Long tabId;
     private Long tableId;
+
     private LocalDateTime openedAt;
-    private String status;
+    private LocalDateTime closedAt;
+
+    private BigDecimal totalAmount;
 
 }

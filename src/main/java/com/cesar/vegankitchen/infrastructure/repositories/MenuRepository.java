@@ -1,4 +1,4 @@
-package com.cesar.vegankitchen.infrastructure;
+package com.cesar.vegankitchen.infrastructure.repositories;
 
 import com.cesar.vegankitchen.domain.MenuItem;
 import org.springframework.data.jpa.repository.JpaRepository;

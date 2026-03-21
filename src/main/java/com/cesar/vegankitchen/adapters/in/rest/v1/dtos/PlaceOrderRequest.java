@@ -1,4 +1,4 @@
-package com.cesar.vegankitchen.api.v1.dtos;
+package com.cesar.vegankitchen.adapters.in.rest.v1.dtos;
 
 
 import lombok.Data;
